@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import './ge-theme.scss';
 import Header from "./header/Header";
 import Test from "./test/Test";
 import Home from "./home/Home";
