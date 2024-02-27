@@ -1,17 +1,19 @@
 import React, { createContext } from "react";
 import {useMediaQuery} from "@mui/material";
+import {useTheme} from "@mui/material-next";
 
 export const ScreenResolutionContext = createContext({});
 
 export const ScreenResolutionProvider = props => {
+    const theme = useTheme();
 
-    const isMobile = useMediaQuery('(max-width:768px)',{noSsr: true});
-    const isNotMobile = useMediaQuery('(min-width:769px)',{noSsr: true});
-    const isTablet = useMediaQuery('(min-width:769px) and (max-width:1024px)',{noSsr: true});
-    const isDesktop = useMediaQuery('(min-width:1025px)',{noSsr: true});
-    const isDesktopSmall = useMediaQuery('(min-width:1025px) and (max-width:1440px)',{noSsr: true});
-    const isDesktopMedium = useMediaQuery('(min-width:1441px) and (max-width:1920px)',{noSsr: true});
-    const isDesktopLarge = useMediaQuery('(min-width:1921px)',{noSsr: true});
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'),{noSsr: true});
+    const isNotMobile = useMediaQuery(theme.breakpoints.up('sm'),{noSsr: true});
+    const isTablet = useMediaQuery(theme.breakpoints.between('sm','md'),{noSsr: true});
+    const isDesktop = useMediaQuery(theme.breakpoints.up('md'),{noSsr: true});
+    const isDesktopSmall = useMediaQuery(theme.breakpoints.between('md','lg'),{noSsr: true});
+    const isDesktopMedium = useMediaQuery(theme.breakpoints.between('lg','xl'),{noSsr: true});
+    const isDesktopLarge = useMediaQuery(theme.breakpoints.up('xl'),{noSsr: true});
 
     return (
         <ScreenResolutionContext.Provider value={{isMobile,isTablet,isDesktopSmall,isDesktopMedium,isDesktopLarge,isNotMobile,isDesktop}}>

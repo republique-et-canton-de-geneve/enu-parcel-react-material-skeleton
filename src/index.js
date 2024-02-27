@@ -8,11 +8,11 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { ScreenResolutionProvider } from "./ScreenResolutionProvider";
 import { StyledEngineProvider } from "@mui/material";
-import { ThemeProvider } from '@mui/material/styles';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
-import geTheme from "./ge-theme";
 import frCH from "date-fns/locale/fr-CH";
+import { CssVarsProvider } from '@mui/material-next/styles';
+import geThemeMD3 from "./ge-theme";
 
 const container = document.getElementById("app");
 const root = createRoot(container);
@@ -23,9 +23,9 @@ root.render(
         <StyledEngineProvider injectFirst>
             <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={frCH}>
                 <ScreenResolutionProvider>
-                    <ThemeProvider theme={geTheme()}>
+                    <CssVarsProvider theme={geThemeMD3}>
                         <App/>
-                    </ThemeProvider>
+                    </CssVarsProvider>
                 </ScreenResolutionProvider>
             </LocalizationProvider>
         </StyledEngineProvider>

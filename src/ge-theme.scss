@@ -1,55 +1,37 @@
+$primary-light: #00629d;
+$primary-dark: #98cbff;
+
 :root {
-  // Thème de base ge.ch
-  --base-primary:#337ab7;
-  --base-blanc:#ffffff;
-  --base-noir:#333333;
-  --base-gris1:#ededed;
-  --base-gris2:#e1e1e1;
-  --base-gris3:#b2b2b2;
-  --statut-success:#5cb85c;
-  --statut-info:#ffffff;
-  --statut-warning:#f0ad4e;
-  --statut-danger:#d9534f;
-
-  // Extensions du theme ge.ch
-  --autre-bleu-fonce:#13204c;
-  --autre-bleu-clair:#6DA6CB;
-  --autre-bleu-enu:#0C6BA8;
-  --autre-vert:#cde5d5;
-  --autre-gris-F:#f0f0f0;
-  --autre-gris-C:#cccccc;
-  --autre-gris-9:#999999;
-  --autre-gris-8:#888888;
-  --autre-gris-7:#777777;
-  --autre-gris-5:#555555;
-  --autre-rouge:#DD1840;
-  --autre-noir:#000000;
-
-  // Thème Espace Numérique Usager
-  --enu-primary-main:#0c6ba8;
-  --enu-primary-light:#8bafce;
-  --enu-primary-dark:#17568e;
-  --enu-secondary:#ffffff;
-  --enu-secondary-light:#ededed;
-  --enu-secondary-dark:#dfeff2;
-  --enu-tertiary:#5a5a5a;
-  --enu-tertiary-light:#9e9e9e;
-  --enu-tertiary-dark:#000000;
-  --enu-background-main:#f5f5f8;
-  --enu-text-main:#333333;
-  --enu-text-light:#9e9e9e;
-  --enu-text-dark:#000000;
-  --enu-textsecondary-main:#337ab7;
-  --enu-textsecondary-light:#8bafce;
-  --enu-textsecondary-dark:#17568e;
-  --enu-textcontrast-main:#ffffff;
-  --enu-important-main:#DD1840;
-  --enu-important-dark:#780d23;
-  --enu-important-light:#e57373;
-  --enu-info-main:#bde8c9;
-  --enu-info-light:#C6F5D3;
-  --enu-info-dark:#b4dec0;
+  --md-sys-color-surface-1-light: #{rgba($primary-light, 0.05)};
+  --md-sys-color-surface-2-light: #{rgba($primary-light, 0.08)};
+  --md-sys-color-surface-3-light: #{rgba($primary-light, 0.11)};
+  --md-sys-color-surface-4-light: #{rgba($primary-light, 0.12)};
+  --md-sys-color-surface-5-light: #{rgba($primary-light, 0.14)};
+  --md-sys-color-surface-1-dark: #{rgba($primary-dark, 0.05)};
+  --md-sys-color-surface-2-dark: #{rgba($primary-dark, 0.08)};
+  --md-sys-color-surface-3-dark: #{rgba($primary-dark, 0.11)};
+  --md-sys-color-surface-4-dark: #{rgba($primary-dark, 0.12)};
+  --md-sys-color-surface-5-dark: #{rgba($primary-dark, 0.14)};
 }
+//@media (prefers-color-scheme: light) {
+//  :where(html,.light-theme), .tokens, :host {
+//    --md-sys-color-surface-1: #{rgba($primary-light, 0.05)};
+//    --md-sys-color-surface-2: #{rgba($primary-light, 0.08)};
+//    --md-sys-color-surface-3: #{rgba($primary-light, 0.11)};
+//    --md-sys-color-surface-4: #{rgba($primary-light, 0.12)};
+//    --md-sys-color-surface-5: #{rgba($primary-light, 0.14)};
+//  }
+//}
+//
+//@media (prefers-color-scheme: dark) {
+//  :where(html,.dark-theme), .tokens, :host {
+//    --md-sys-color-surface-1: #{rgba($primary-dark, 0.15)};
+//    --md-sys-color-surface-2: #{rgba($primary-dark, 0.18)};
+//    --md-sys-color-surface-3: #{rgba($primary-dark, 0.21)};
+//    --md-sys-color-surface-4: #{rgba($primary-dark, 0.22)};
+//    --md-sys-color-surface-5: #{rgba($primary-dark, 0.24)};
+//  }
+//}
 
 @mixin media-mobile {
   @media screen and (max-width: 768.98px) {
@@ -90,35 +72,4 @@
   @media screen and (min-width: 1921px) {
     @content;
   }
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-  color: var(--enu-text-main);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  text-decoration: none;
-}
-a:active, a:hover {
-  outline: 0;
-}
-
-button {
-  text-transform: none !important;
 }
