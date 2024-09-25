@@ -2,23 +2,15 @@ import * as React from "react";
 import {Button, useColorScheme} from "@mui/material-next";
 
 export const ModeSwitcher = () => {
-    const { mode, setMode } = useColorScheme();
-    const [mounted, setMounted] = React.useState(false);
-
-    React.useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) {
-        // for server-side rendering
-        // learn more at https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
-        return null;
-    }
+    const { setColorScheme, systemMode,colorScheme, mode, setMode } = useColorScheme();
 
     return (
         <Button
             variant="outlined"
             onClick={() => {
+                console.log("colorScheme = " + colorScheme);
+                console.log("mode = " + mode);
+                console.log("systemMode = " + mode);
                 if (mode === 'light') {
                     setMode('dark');
                 } else {
@@ -26,7 +18,7 @@ export const ModeSwitcher = () => {
                 }
             }}
         >
-            {mode === 'light' ? 'Dark' : 'Light'}
+            {mode === 'light' ? 'dark' : 'light'}
         </Button>
     );
 };

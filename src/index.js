@@ -9,25 +9,23 @@ import '@fontsource/roboto/700.css';
 import { ScreenResolutionProvider } from "./ScreenResolutionProvider";
 import { StyledEngineProvider } from "@mui/material";
 import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3'
 import frCH from "date-fns/locale/fr-CH";
 import { CssVarsProvider } from '@mui/material-next/styles';
-import geThemeMD3 from "./ge-theme";
+import geTheme from "./theme/ge-theme";
 
 const container = document.getElementById("app");
 const root = createRoot(container);
 
 root.render(
-    <>
-        <CssBaseline/>
-        <StyledEngineProvider injectFirst>
+    <StyledEngineProvider injectFirst>
+        <CssVarsProvider theme={geTheme} defaultMode={"system"}>
+            <CssBaseline/>
             <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={frCH}>
                 <ScreenResolutionProvider>
-                    <CssVarsProvider theme={geThemeMD3}>
-                        <App/>
-                    </CssVarsProvider>
+                    <App/>
                 </ScreenResolutionProvider>
             </LocalizationProvider>
-        </StyledEngineProvider>
-    </>
+        </CssVarsProvider>
+    </StyledEngineProvider>
 );

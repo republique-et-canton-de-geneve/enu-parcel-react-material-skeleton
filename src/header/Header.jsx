@@ -7,7 +7,7 @@ import {Button, Divider, ListItemIcon, Menu, MenuItem} from "@mui/material-next"
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import {ModeSwitcher} from "../ModeSwitcher";
+import {ModeSwitcher} from "../theme/ModeSwitcher";
 
 export default function Header () {
     const [anchorEl, setAnchorEl] = React.useState(null);
