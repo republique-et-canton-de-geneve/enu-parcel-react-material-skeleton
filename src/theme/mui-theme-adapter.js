@@ -30,7 +30,7 @@ const createColorScheme = (mode) => ({
         },
         background: {
             default: cssVar('--md-sys-color-background', mode),
-            paper: cssVar('--md-sys-color-surface-1-light', mode),
+            paper: cssVar('--md-sys-color-surface-1-'+mode, mode),
             highlight: cssVar('--md-sys-color-surface-container', mode),
         },
         error: {
