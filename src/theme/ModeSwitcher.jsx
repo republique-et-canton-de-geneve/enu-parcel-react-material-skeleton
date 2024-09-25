@@ -2,23 +2,22 @@ import * as React from "react";
 import {Button, useColorScheme} from "@mui/material-next";
 
 export const ModeSwitcher = () => {
-    const { setColorScheme, systemMode,colorScheme, mode, setMode } = useColorScheme();
+    const {colorScheme, mode, setMode } = useColorScheme();
+
+    const darkMode = (mode === 'dark' || colorScheme === 'dark');
 
     return (
         <Button
             variant="outlined"
             onClick={() => {
-                console.log("colorScheme = " + colorScheme);
-                console.log("mode = " + mode);
-                console.log("systemMode = " + mode);
-                if (mode === 'light') {
-                    setMode('dark');
-                } else {
+                if (darkMode) {
                     setMode('light');
+                } else {
+                    setMode('dark');
                 }
             }}
         >
-            {mode === 'light' ? 'dark' : 'light'}
+            {darkMode ? 'light' : 'dark'}
         </Button>
     );
 };
