@@ -82,6 +82,31 @@ geTheme = extendTheme( {components: {
                 }
             }
         },
+        MuiAlert: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 12,
+                    width: "fit-content",
+                    margin: geTheme.spacing(1),
+                },
+                standardSuccess: {
+                    backgroundColor: geTheme.vars.sys.color.successContainer,
+                    color: geTheme.vars.sys.color.onSuccessContainer
+                },
+                standardInfo: {
+                    backgroundColor: geTheme.vars.sys.color.infoContainer,
+                    color: geTheme.vars.sys.color.onInfoContainer
+                },
+                standardWarning: {
+                    backgroundColor: geTheme.vars.sys.color.warningContainer,
+                    color: geTheme.vars.sys.color.onWarningContainer
+                },
+                standardError: {
+                    backgroundColor: geTheme.vars.sys.color.errorContainer,
+                    color: geTheme.vars.sys.color.onErrorContainer
+                }
+            }
+        },
         MuiCard: {
             styleOverrides: {
                 root: {

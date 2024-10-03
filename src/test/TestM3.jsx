@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+    Alert,
     Box,
     Card, CardContent, FormControl, InputLabel, ListItemButton, MenuItem,
     Paper, Select,
@@ -303,6 +304,18 @@ export default function TestM3() {
                         </ListItemButton>
                     </List>
                 </Paper>
+            </Grid>
+            <Grid
+                size={{
+                    xs: 4,
+                    sm: 4,
+                    md: 6
+                }}>
+                    <Typography>Alerts:</Typography>
+                    <Alert severity="success">Success</Alert>
+                    <Alert severity="info">Info</Alert>
+                    <Alert severity="warning">Warning</Alert>
+                    <Alert severity="error">Error</Alert>
             </Grid>
             <Grid
                 size={{

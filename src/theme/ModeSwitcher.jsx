@@ -1,5 +1,7 @@
 import * as React from "react";
 import {Button, useColorScheme} from "@mui/material-next";
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 export const ModeSwitcher = () => {
     const {colorScheme, mode, setMode } = useColorScheme();
@@ -16,6 +18,7 @@ export const ModeSwitcher = () => {
                     setMode('dark');
                 }
             }}
+            startIcon={darkMode ? <LightModeIcon/> : <DarkModeIcon/>}
         >
             {darkMode ? 'light' : 'dark'}
         </Button>
