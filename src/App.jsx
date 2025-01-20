@@ -1,4 +1,3 @@
-import * as React from 'react';
 import {useContext} from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Header from "./header/Header";

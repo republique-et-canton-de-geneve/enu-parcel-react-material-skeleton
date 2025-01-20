@@ -1,4 +1,4 @@
-import * as React from "react";
+import {useEffect, useRef, useState} from "react";
 import {Divider, List, ListItemIcon, ListItemText} from "@mui/material-next";
 import {Paper, Typography} from "@mui/material";
 import Home from '@mui/icons-material/Home';
@@ -8,10 +8,9 @@ import Cloud from '@mui/icons-material/Cloud';
 import ListItemButton from "@mui/material-next/ListItemButton";
 import {useNavigate} from "react-router-dom";
 import {SelectMesEspaces} from "./selecteur-nav/SelectMesEspaces";
-import {useEffect, useRef} from "react";
 
 export function Nav() {
-    const [selectedIndex, setSelectedIndex] = React.useState("/");
+    const [selectedIndex, setSelectedIndex] = useState("/");
     const navigateTo = useNavigate();
 
     const handleListItemClick = (event, index) => {

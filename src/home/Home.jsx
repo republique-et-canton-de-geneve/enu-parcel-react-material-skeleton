@@ -1,7 +1,6 @@
-import * as React from 'react';
+import {useContext} from "react";
 import {Button, Paper, styled, Typography} from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import {useContext} from "react";
 import {ScreenResolutionContext} from "../ScreenResolutionProvider";
 
 export default function Home() {

@@ -1,6 +1,5 @@
 import {useTheme} from "@mui/material-next";
 import {Box, FormControl, MenuItem, Select, SvgIcon} from "@mui/material";
-import * as React from "react";
 
 const urlEspaces = {
   "A": "https://www.ge.ch",

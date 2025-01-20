@@ -1,6 +1,7 @@
-import * as React from 'react';
+import {useState} from "react";
 import {
     Alert,
+    Avatar,
     Box,
     Card, CardContent, FormControl, InputLabel, ListItemButton, MenuItem,
     Paper, Select,
@@ -10,9 +11,9 @@ import {
     TableContainer,
     TableHead,
     TableRow,
+    Grid2,
     Typography
 } from "@mui/material";
-import Grid from '@mui/material/Grid2';
 import { useNavigate } from "react-router-dom";
 import SwipeLeftIcon from '@mui/icons-material/SwipeLeft';
 import SwipeRightIcon from '@mui/icons-material/SwipeRight';
@@ -39,34 +40,38 @@ import {
     SnackbarContent,
     Tabs,
     Tab,
-    TabScrollButton
+    TabScrollButton, useTheme
 } from "@mui/material-next";
 import MailIcon from '@mui/icons-material/Mail';
 import CircularProgress from "@mui/material-next/CircularProgress";
-import Avatar from '@mui/material/Avatar';
 import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
-import IconButton from "@mui/material-next/IconButton";
 import DownloadIcon from '@mui/icons-material/Download';
-import {ModeSwitcher} from "../theme/ModeSwitcher";
+import FormatBoldIcon from '@mui/icons-material/FormatBold';
+import FormatItalicIcon from '@mui/icons-material/FormatItalic';
+import FormatUnderlinedIcon from '@mui/icons-material/FormatUnderlined';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import AddLinkIcon from '@mui/icons-material/AddLink';
+import IconButton from "@mui/material-next/IconButton";
 
 export default function TestM3() {
     const navigate = useNavigate();
+    const theme = useTheme();
 
     const handleDelete = () => {
         console.info('You clicked the delete icon.');
     };
 
-    const [selectedIndex, setSelectedIndex] = React.useState(1);
+    const [selectedIndex, setSelectedIndex] = useState(1);
 
     const handleListItemClick = (event, index) => {
         setSelectedIndex(index);
     };
 
-    const [age, setAge] = React.useState('');
+    const [age, setAge] = useState('');
 
     const handleChange = (event) => {
         setAge(event.target.value);
@@ -89,8 +94,18 @@ export default function TestM3() {
             <Button variant="outlined" startIcon={<DownloadIcon/>}>Avec une icône au début</Button>
             <Button variant="outlined" endIcon={<DownloadIcon/>}>Avec une icône à la fin</Button>
         </Paper>
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            <Grid
+        <Paper variant="outlined">
+            <Typography>Button Group</Typography>
+            <Paper elevation={5} sx={{borderRadius: 50, width: "fit-content", padding: 0}}>
+                <IconButton aria-label="gras"><FormatBoldIcon/></IconButton>
+                <IconButton aria-labe="italique"><FormatItalicIcon/></IconButton>
+                <IconButton aria-label="souligné"><FormatUnderlinedIcon/></IconButton>
+                <IconButton aria-label="liste"><FormatListBulletedIcon/></IconButton>
+                <IconButton aria-label="lien"><AddLinkIcon/></IconButton>
+            </Paper>
+        </Paper>
+        <Grid2 container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -103,8 +118,8 @@ export default function TestM3() {
                     <Chip label="Warning" color="warning" onDelete={handleDelete}/>
                     <Chip label="Outlined" variant="outlined" onDelete={handleDelete}/>
                 </Paper>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -119,8 +134,8 @@ export default function TestM3() {
                         </Paper>
                     </Paper>
                 </Paper>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -133,8 +148,8 @@ export default function TestM3() {
                     <Typography color="secondary">Texte secondaire</Typography>
                     <Typography color="tertiary">Texte tertiaire</Typography>
                 </Paper>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -158,8 +173,8 @@ export default function TestM3() {
                         </FormControl>
                     </form>
                 </Paper>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -170,8 +185,8 @@ export default function TestM3() {
                         <Typography>Carte primaire</Typography>
                     </CardContent>
                 </Card>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -182,8 +197,8 @@ export default function TestM3() {
                         <Typography>Carte secondaire</Typography>
                     </CardContent>
                 </Card>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -194,8 +209,8 @@ export default function TestM3() {
                         <Typography>Carte tertiaire</Typography>
                     </CardContent>
                 </Card>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -212,8 +227,8 @@ export default function TestM3() {
                     <SwipeRightIcon size="large" color="disabled"/>
                     <CircularProgress color="primary" variant="indeterminate" />
                 </Paper>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -234,8 +249,8 @@ export default function TestM3() {
                         color="secondary"
                     />
                 </Paper>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -274,8 +289,8 @@ export default function TestM3() {
                         </ListItem>
                     </List>
                 </Paper>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -304,8 +319,8 @@ export default function TestM3() {
                         </ListItemButton>
                     </List>
                 </Paper>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 4,
@@ -316,8 +331,8 @@ export default function TestM3() {
                     <Alert severity="info">Info</Alert>
                     <Alert severity="warning">Warning</Alert>
                     <Alert severity="error">Error</Alert>
-            </Grid>
-            <Grid
+            </Grid2>
+            <Grid2
                 size={{
                     xs: 4,
                     sm: 8,
@@ -346,8 +361,8 @@ export default function TestM3() {
                         </TableBody>
                     </Table>
                 </TableContainer>
-            </Grid>
-        </Grid>
+            </Grid2>
+        </Grid2>
         <Box sx={{ width: '100%', maxWidth: 500 }}>
             <Typography variant="h1" gutterBottom>
                 h1. Heading

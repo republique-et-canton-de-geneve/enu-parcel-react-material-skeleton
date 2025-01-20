@@ -1,8 +1,8 @@
-import * as React from 'react';
-import {FormControl, InputLabel, ListItemButton, MenuItem, Paper, Select, Typography} from "@mui/material";
+import {useState} from "react";
+import {FormControl, InputLabel, MenuItem, Paper, Select, Typography} from "@mui/material";
 
 export default function TestForm() {
-    const [age, setAge] = React.useState('');
+    const [age, setAge] = useState('');
 
     const handleChange = (event) => {
         setAge(event.target.value);

@@ -77,3 +77,4 @@ yarn-error.log*
 /json/
 /.parcel-cache/
 /package-lock.json
+/parcel-bundle-reports/

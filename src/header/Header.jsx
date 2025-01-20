@@ -1,16 +1,16 @@
-import * as React from 'react';
+import {useState} from "react";
 import {AppBar, Avatar, Toolbar, Typography} from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
-import LogoGE from '../icons/logo_ge_big.svg';
+import {Divider, ListItemIcon, Menu, MenuItem} from "@mui/material-next";
 import IconButton from "@mui/material-next/IconButton";
-import {Button, Divider, ListItemIcon, Menu, MenuItem} from "@mui/material-next";
+import LogoGE from '../icons/logo_ge_big.svg';
+import MenuIcon from '@mui/icons-material/Menu';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import {ModeSwitcher} from "../theme/ModeSwitcher";
 
 export default function Header () {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);

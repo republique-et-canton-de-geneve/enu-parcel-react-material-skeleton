@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import { createContext } from "react";
 import {useMediaQuery} from "@mui/material";
 import {useTheme} from "@mui/material-next";
 
