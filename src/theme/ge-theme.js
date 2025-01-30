@@ -5,11 +5,42 @@ import {extendTheme} from "@mui/material-next/styles";
 import {themeV2dark, themeV2light, themeV3dark, themeV3light} from "./mui-theme-adapter";
 import {ref_palette} from "./mui-theme-ref-palette";
 
+//  --md-sys-color-surface-2: rgb(27 35 42);
+//   --md-sys-color-surface-3: rgb(31 40 49);
+//   --md-sys-color-surface-4: rgb(33 42 51);
+//   --md-sys-color-surface-5: rgb(36 46 56);
+
 let geTheme = extendTheme({
         ref: ref_palette,
         colorSchemes: {
-            light: {...themeV2light, ...themeV3light},
-            dark: {...themeV2dark, ...themeV3dark}
+            light: {
+                ...themeV2light,
+                ...themeV3light,
+                sys: {
+                    ...themeV3light.sys,
+                    color: {
+                        ...themeV3light.sys.color,
+                        surface2: 'rgb(231 237 246)',
+                        surface3: 'rgb(225 232 242)',
+                        surface4: 'rgb(223 231 241)',
+                        surface5: 'rgb(219 228 239)',
+                    },
+                },
+            },
+            dark: {
+                ...themeV2dark,
+                ...themeV3dark,
+                sys: {
+                    ...themeV3dark.sys,
+                    color: {
+                        ...themeV3dark.sys.color,
+                        surface2: 'rgb(27 35 42)',
+                        surface3: 'rgb(31 40 49)',
+                        surface4: 'rgb(33 42 51)',
+                        surface5: 'rgb(36 46 56)',
+                    },
+                },
+            },
         },
         breakpoints: {
             values: {
@@ -73,7 +104,11 @@ geTheme = extendTheme( {components: {
             },
             styleOverrides: {
                 elevation0:  { boxShadow: "none" },
-                elevation1:  { boxShadow: "none" },
+                elevation1:  { boxShadow: "none", backgroundColor: "var(--md-sys-color-surface)" },
+                elevation2:  { boxShadow: "none", backgroundColor: "var(--md-sys-color-surface2)" },
+                elevation3:  { boxShadow: "none", backgroundColor: "var(--md-sys-color-surface3)" },
+                elevation4:  { boxShadow: "none", backgroundColor: "var(--md-sys-color-surface4)" },
+                elevation5:  { boxShadow: "none", backgroundColor: "var(--md-sys-color-surface5)" },
                 root: {
                     padding: geTheme.spacing(2)
                 },

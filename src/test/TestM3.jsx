@@ -127,9 +127,9 @@ export default function TestM3() {
                 }}>
                 <Paper>
                     <Typography>Paper sans contour</Typography>
-                    <Paper>
+                    <Paper elevation={2}>
                         <Typography>Un autre paper</Typography>
-                        <Paper>
+                        <Paper elevation={3}>
                             <Typography>Encore un autre paper</Typography>
                         </Paper>
                     </Paper>

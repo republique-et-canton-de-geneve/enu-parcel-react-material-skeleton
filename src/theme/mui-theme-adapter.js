@@ -30,8 +30,8 @@ const createColorScheme = (mode) => ({
         },
         background: {
             default: cssVar('--md-sys-color-background', mode),
-            paper: cssVar('--md-sys-color-surface-1-'+mode, mode),
-            highlight: cssVar('--md-sys-color-surface-container', mode),
+            paper: cssVar('--md-sys-color-surface', mode),
+            highlight: cssVar('--md-sys-color-surface-container-lowest', mode),
         },
         error: {
             main: cssVar('--md-sys-color-error', mode),
@@ -125,6 +125,7 @@ const theme = (mode) => ({
             surfaceContainerLow: cssVar("--md-sys-color-surface-container-low", mode),
             surfaceContainer: cssVar("--md-sys-color-surface-container", mode),
             surfaceContainerHigh: cssVar("--md-sys-color-surface-container-high", mode),
+            surfaceContainerHighest: cssVar("--md-sys-color-surface-container-highest", mode),
             warning: cssVar("--md-extended-color-warning-color", mode),
             onWarning: cssVar("--md-extended-color-warning-color", mode),
             warningContainer: cssVar("--md-extended-color-warning-color-container", mode),
